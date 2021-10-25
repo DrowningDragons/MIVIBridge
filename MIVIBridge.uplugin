@@ -1,0 +1,40 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "MIVIBridge",
+	"Description": "Bridges MoveIt with VaultIt doing the work for you. Requires MoveIt version >= 2.328",
+	"Category": "Gameplay",
+	"CreatedBy": "Drowning Dragons",
+	"CreatedByURL": "",
+	"DocsURL": "https://github.com/DrowningDragons/VaultIt-Wiki/wiki",
+	"MarketplaceURL": "",
+	"SupportURL": "https://discord.gg/rk3VRYv",
+	"EnabledByDefault": true,
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "MIVIBridge",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Win32"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "VaultIt",
+			"Enabled": true
+		},
+		{
+			"Name": "MoveIt",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/1b8d6e55c50b4b189f283cbbe3d266d9"
+		}
+	]
+}
