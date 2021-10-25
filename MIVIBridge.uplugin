@@ -29,7 +29,8 @@
 	"Plugins": [
 		{
 			"Name": "VaultIt",
-			"Enabled": true
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/7d19b5622d6846edb9881e6c89bce05e"
 		},
 		{
 			"Name": "MoveIt",
