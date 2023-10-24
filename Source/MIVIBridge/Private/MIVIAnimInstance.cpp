@@ -18,7 +18,7 @@ void UMIVIAnimInstance::NativeUpdateAnimation(float DeltaTime)
 
 	if (VaultCharacter)
 	{
-		bool bWasVaulting = bIsVaulting;
+		const bool bWasVaulting = bIsVaulting;
 		bIsVaulting = VaultCharacter->IsVaulting();
 		if (bIsVaulting)
 		{

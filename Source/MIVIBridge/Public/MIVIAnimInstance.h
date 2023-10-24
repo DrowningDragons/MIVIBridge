@@ -54,8 +54,15 @@ public:
 	UMIVIAnimInstance()
 		: RHandName(TEXT("hand_r"))
 		, LHandName(TEXT("hand_l"))
-		, FBIK( { FVIBoneFBIKData(RHandName), FVIBoneFBIKData(LHandName) } )
-	{}
+		, FBIK({FVIBoneFBIKData(RHandName)
+		, FVIBoneFBIKData(LHandName)})
+		, bRHand(false)
+		, bLHand(false)
+		, bBothHand(false)
+		, bIsVaulting(false)
+		, VaultCharacter(nullptr)
+	{
+	}
 
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaTime) override;

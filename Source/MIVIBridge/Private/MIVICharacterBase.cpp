@@ -6,7 +6,6 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Pawn/VIPawnVaultComponent.h"
 #include "VIMotionWarpingComponent.h"
-#include "Components/CapsuleComponent.h"
 #include "VIBlueprintFunctionLibrary.h"
 
 void AMIVICharacterBase::BeginPlay()
