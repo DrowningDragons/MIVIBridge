@@ -29,7 +29,7 @@ public:
 	virtual void OnRep_Controller() override;
 
 	virtual UVIPawnVaultComponent* GetPawnVaultComponent_Implementation() const override { return VaultComponent; }
-	virtual UVIMotionWarpingComponent* GetMotionWarpingComponent_Implementation() const override { return MotionWarping; }
+	virtual UMotionWarpingComponent* GetMotionWarpingComponent_Implementation() const override { return MotionWarpingComponent; }
 
 	virtual FVIAnimSet GetVaultAnimSet_Implementation() const override { return VaultAnimSet; }
 	virtual FVITraceSettings GetVaultTraceSettings_Implementation() const override { return VaultTraceSettings; }

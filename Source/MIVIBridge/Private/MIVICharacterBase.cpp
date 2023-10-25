@@ -1,19 +1,18 @@
 // Copyright (c) 2019-2021 Drowning Dragons Limited. All Rights Reserved.
 
-
 #include "MIVICharacterBase.h"
 #include "Net/UnrealNetwork.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Pawn/VIPawnVaultComponent.h"
-#include "VIMotionWarpingComponent.h"
 #include "VIBlueprintFunctionLibrary.h"
+#include "MotionWarpingComponent.h"
 
 void AMIVICharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 
 	VaultComponent = IVIPawnInterface::Execute_GetPawnVaultComponent(this);
-	MotionWarping = IVIPawnInterface::Execute_GetMotionWarpingComponent(this);
+	MotionWarpingComponent = IVIPawnInterface::Execute_GetMotionWarpingComponent(this);
 }
 
 void AMIVICharacterBase::CheckJumpInput(float DeltaTime)
@@ -127,7 +126,7 @@ void AMIVICharacterBase::StopVaultAbility()
 void AMIVICharacterBase::OnRep_MotionMatch()
 {
 	// Simulated proxies update their sync points here, sent from the server during GA_Vault
-	MotionWarping->AddOrUpdateSyncPoint(TEXT("VaultSyncPoint"), FVIMotionWarpingSyncPoint(RepMotionMatch.Location, RepMotionMatch.Direction.ToOrientationQuat()));
+	MotionWarpingComponent->AddOrUpdateWarpTargetFromLocationAndRotation(TEXT("VaultSyncPoint"), RepMotionMatch.Location, RepMotionMatch.Direction.Rotation());
 }
 
 bool AMIVICharacterBase::IsVaulting() const
@@ -158,7 +157,7 @@ UVIPawnVaultComponent* AMIVICharacterBase::GetPawnVaultComponent_Implementation(
 	return nullptr;
 }
 
-UVIMotionWarpingComponent* AMIVICharacterBase::GetMotionWarpingComponent_Implementation() const
+UMotionWarpingComponent* AMIVICharacterBase::GetMotionWarpingComponent_Implementation() const
 {
 	// You need to override this
 	UVIBlueprintFunctionLibrary::MessageLogError(FString::Printf(TEXT("AMIVICharacterBase::GetMotionWarpingComponent not implemented for { %s }. Cannot Vault."), *GetName()));

@@ -8,7 +8,7 @@
 #include "Pawn/VIPawnInterface.h"
 #include "MIVICharacterBase.generated.h"
 
-class UVIMotionWarpingComponent;
+class UMotionWarpingComponent;
 class UVIPawnVaultComponent;
 
 /**
@@ -28,7 +28,7 @@ public:
 	 * Motion Warping Component used for vaulting
 	 */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Character)
-	UVIMotionWarpingComponent* MotionWarping;
+	UMotionWarpingComponent* MotionWarpingComponent;
 
 	/**
 	 * Pawn Vault Component used for core vaulting logic
@@ -102,7 +102,7 @@ public:
 	// inside their functions themselves
 
 	virtual UVIPawnVaultComponent* GetPawnVaultComponent_Implementation() const override;
-	virtual UVIMotionWarpingComponent* GetMotionWarpingComponent_Implementation() const override;
+	virtual UMotionWarpingComponent* GetMotionWarpingComponent_Implementation() const override;
 	virtual USkeletalMeshComponent* GetMeshForVaultMontage_Implementation() const override { return GetMesh(); }
 	virtual FVIAnimSet GetVaultAnimSet_Implementation() const override;
 	virtual FVITraceSettings GetVaultTraceSettings_Implementation() const override;

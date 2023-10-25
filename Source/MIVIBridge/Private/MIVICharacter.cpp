@@ -2,15 +2,16 @@
 
 
 #include "MIVICharacter.h"
+
+#include "MotionWarpingComponent.h"
 #include "GAS/VIAbilitySystemComponent.h"
 #include "Pawn/VIPawnVaultComponent.h"
-#include "VIMotionWarpingComponent.h"
 
 AMIVICharacter::AMIVICharacter(const FObjectInitializer& OI)
 	: Super(OI)
 {
 	VaultComponent = CreateDefaultSubobject<UVIPawnVaultComponent>(TEXT("PawnVaulting"));
-	MotionWarping = CreateDefaultSubobject<UVIMotionWarpingComponent>(TEXT("MotionWarping"));
+	MotionWarpingComponent = CreateDefaultSubobject<UMotionWarpingComponent>(TEXT("MotionWarping"));
 }
 
 void AMIVICharacter::BeginPlay()

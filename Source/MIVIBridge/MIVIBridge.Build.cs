@@ -14,8 +14,8 @@ public class MIVIBridge : ModuleRules
 				"Core",
 				"MoveIt",
                 "VaultIt",
-                "VIMotionWarping",
                 "GameplayAbilities",
+                "MotionWarping",
 			}
             );
 			
@@ -24,7 +24,7 @@ public class MIVIBridge : ModuleRules
 			new string[]
 			{
 				"CoreUObject",
-				"Engine",
+				"Engine", 
 			}
 			);
 	}

@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.0",
+	"VersionName": "1.1",
 	"FriendlyName": "MIVIBridge",
 	"Description": "Bridges MoveIt with VaultIt doing the work for you. Requires MoveIt version >= 2.328",
 	"Category": "Gameplay",
@@ -35,6 +35,10 @@
 			"Name": "MoveIt",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/1b8d6e55c50b4b189f283cbbe3d266d9"
+		},
+		{
+			"Name": "MotionWarping",
+			"Enabled": true
 		}
 	]
 }
